@@ -36,6 +36,8 @@ int main()
     int pibpercV;
     int superV;
 
+    int comparacao;
+
     //Informações da primeira carta
     printf("Digite a letra do estado da carta %i\n", numCarta1);
     scanf("%s", letra1);
@@ -82,7 +84,7 @@ int main()
 
     //Calculando o Pib per capita das cartas
     pibperc1 = (float)pib1/numPopulacao1;
-    pibperc2 = (float)pib1/numPopulacao2;
+    pibperc2 = (float)pib2/numPopulacao2;
 
     //Calculando o SUPER PORDERRRRR
     super1=numPopulacao1+area1+pib1+pontoT1+pibperc1+(1/densPopulacional1);
@@ -119,6 +121,7 @@ int main()
     printf("Pib per Capita: %f reais\n", pibperc2);
     printf("SUPER PODER TOTAL: %.2f\n", super2);
 
+    /* COMPARAÇÃO SIMPLES
     printf("\n\n****COMBATE DAS CARTAS***\n");
 
     printf("Vencedor do atributo POPULACAO TOTAL: 1-Carta1 | 0-Carta2 \n");
@@ -131,7 +134,7 @@ int main()
     pibV = pib1 > pib2;
     printf(">>> %i <<<\n", (int)pibV);
     printf("Vencedor do atributo PONTUACAO TURISTICA: 1-Carta1 | 0-Carta2 \n");
-    pontoTV = pontoT1 > pontoT1;
+    pontoTV = pontoT1 > pontoT2;
     printf(">>> %i <<<\n", (int)pontoTV);
     printf("Vencedor do atributo DENSIDADE POPULACIONAL: 1-Carta1 | 0-Carta2 \n");
     densPopulacionalV = (1/densPopulacional1) > (1/densPopulacional2);
@@ -142,8 +145,113 @@ int main()
     printf("Vencedor do atributo SUPER PODER!!!!): 1-Carta1 | 0-Carta2 \n");
     superV = super1 > super2;
     printf(">>> %i <<<\n", (int)superV);
+    */
 
+    // Comparação com IF
+    printf("\n\n**** Escolha o atributo para comparacao entre as cartas: ****\n");
+    printf("1- Populacao.\n2- Area.\n3- PIB.\n4- Densidade Populacional.\n5- PIB Per Capita.\n\n");
+    scanf("%i", &comparacao);
 
+    //Comparacao por Populacao
+    if(comparacao ==1)
+    {
+        printf("RESULTADO:\n");
+        printf("Populacao Cidade %s: %i \n", cidade1, numPopulacao1);
+        printf("Populacao Cidade %s: %i \n", cidade2, numPopulacao2);
+
+        if(numPopulacao1 > numPopulacao2)
+        {
+            printf("Populacao de %s e a vencedora!\n",cidade1);
+        }
+        if (numPopulacao1 < numPopulacao2)
+        {
+            printf("Populacao de %s e a vencedora!\n",cidade2);
+        }
+        if (numPopulacao1 == numPopulacao2)
+        {
+            printf("Empate!");
+        }
+    }
+    //Comparacao por Area
+    if(comparacao ==2)
+    {
+        printf("RESULTADO:\n");
+        printf("Area Cidade %s: %f \n", cidade1, area1);
+        printf("Area Cidade %s: %f \n", cidade2, area2);
+
+        if(area1 > area2)
+        {
+            printf("Area de %s e a vencedora!\n",cidade1);
+        }
+        if (area1 < area2)
+        {
+            printf("Area de %s e a vencedora!\n",cidade2);
+        }
+        if (area1 == area2)
+        {
+            printf("Empate!");
+        }
+    }
+    //Comparacao por PIB
+    if(comparacao ==3)
+    {
+        printf("RESULTADO:\n");
+        printf("PIB Cidade %s: %f \n", cidade1, pib1);
+        printf("PIB Cidade %s: %f \n", cidade2, pib2);
+
+        if(pib1 > pib2)
+        {
+            printf("PIB de %s e a vencedora!\n",cidade1);
+        }
+        if (pib1 < pib2)
+        {
+            printf("PIB de %s e a vencedora!\n",cidade2);
+        }
+        if (pib1 == pib2)
+        {
+            printf("Empate!");
+        }
+    }
+    //Comparacao por densidade populacional
+    if(comparacao ==4)
+    {
+        printf("RESULTADO:\n");
+        printf("Densidade populacional Cidade %s: %f \n", cidade1, densPopulacional1);
+        printf("Densidade populacional Cidade %s: %f \n", cidade2, densPopulacional2);
+
+        if(densPopulacional1 > densPopulacional2)
+        {
+            printf("Densidade populacional de %s e a vencedora!\n",cidade2);
+        }
+        if (densPopulacional1 < densPopulacional2)
+        {
+            printf("Densidade populacional de %s e a vencedora!\n",cidade1);
+        }
+        if (densPopulacional1 == densPopulacional2)
+        {
+            printf("Empate!");
+        }
+    }
+    //Comparacao por Pib Per Capita
+    if(comparacao ==5)
+    {
+        printf("RESULTADO:\n");
+        printf("PIB Per Capita Cidade %s: %f \n", cidade1, pibperc1);
+        printf("PIB Per Capiya Cidade %s: %f \n", cidade2, pibperc2);
+
+        if(pibperc1 > pibperc2)
+        {
+            printf("PIB Per Capita de %s e a vencedora!\n",cidade1);
+        }
+        if (pibperc1 < pibperc2)
+        {
+             printf("PIB Per Capita de %s e a vencedora!\n",cidade2);
+        }
+        if (pibperc1 == pibperc2)
+        {
+            printf("Empate!");
+        }
+    }
 
     return 0;
 }
